@@ -1,0 +1,20 @@
+server.port: 8383
+spring.application.name: marshaller
+server.servlet.context-path: /marshaller
+
+spring.cloud.stream.kafka.binder.auto-create-topics: true
+spring.cloud.stream.kafka.binder.replication-factor: 1
+spring.cloud.stream.kafka.binder.configuration:
+  auto.offset.reset: latest
+spring.cloud.stream.bindings:
+  foo-in-0:
+    destination: this.is.input.example.topic
+    group: dummygroup
+  foo-out-0:
+    destination: this.is.output.example.topic
+    group: dummygroup
+spring.cloud.stream:
+  function.definition: foo
+
+spring.cloud.stream.kafka.binder.brokers: ${secret.binder.brokers}
+spring.cloud.stream.kafka.binder.zkNodes: ${secret.zk.nodes}
