@@ -19,6 +19,7 @@ The following endpoints are available:
 
 ## How to Use
 
+First set the Kafka servers. See `Set the kafka servers` section.
 After starting the application, you can import the following curl commands into postman to test the endpoints.
 
 ### Testing the `/mvc` endpoint
