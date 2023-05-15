@@ -22,7 +22,7 @@ public class DummyMessage2 extends BaseRequest {
 
     private String numbers;
 
-    //@JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     public List<String> getTokens() {
         if (StringUtils.isBlank(this.numbers)) return Collections.emptyList();
         return List.of(this.numbers.split(";\\s*"));
